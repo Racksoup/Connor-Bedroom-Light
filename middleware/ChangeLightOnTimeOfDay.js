@@ -62,7 +62,7 @@ const ChangeLightOnTimeOfDay = () => {
 
   setTimeout(() => {
     ChangeLightOnTimeOfDay();
-  }, 60000);
+  }, 3000);
 };
 
 module.exports = { ChangeLightOnTimeOfDay };
