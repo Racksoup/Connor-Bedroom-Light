@@ -4,16 +4,18 @@ const axios = require('axios');
 const PORT = process.env.PORT || 42000;
 
 // Change Light 2 Color (Connor's Bedroom)
-router.put('/light/:hue/:bri', async (req, res) => {
-  const hue = req.params.hue;
-  const bri = req.params.bri;
+router.put('/light/:hue/:bri/:sat', async (req, res) => {
+  const hue = parseInt(req.params.hue);
+  const bri = parseInt(req.params.bri);
+  const sat = parseInt(req.params.sat);
   try {
     await axios.put(
       `http://${process.env.HUE_BRIDGE_IP}/api/${process.env.HUE_USERNAME}/lights/2/state`,
       {
         on: true,
-        hue: parseInt(hue),
-        bri: parseInt(bri),
+        hue,
+        bri,
+        sat,
       }
     );
   } catch (error) {
