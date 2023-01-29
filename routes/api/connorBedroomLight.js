@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const axios = require('axios');
-const PORT = process.env.PORT || 4200;
+const PORT = process.env.PORT || 42000;
 
 // Change Light 2 Color (Connor's Bedroom)
 router.put('/light/:hue/:bri', async (req, res) => {

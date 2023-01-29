@@ -1,5 +1,5 @@
 const axios = require('axios');
-const PORT = process.env.PORT || 4200;
+const PORT = process.env.PORT || 42000;
 
 const ChangeLightOnTimeOfDay = () => {
   const date = new Date();
@@ -53,8 +53,9 @@ const ChangeLightOnTimeOfDay = () => {
     case 22:
     case 23:
     case 24:
+    case 0:
       hue = 42000;
-      bri = 90;
+      bri = 60;
       break;
   }
 
