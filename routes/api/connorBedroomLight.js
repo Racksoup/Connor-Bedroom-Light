@@ -25,4 +25,8 @@ router.put('/light/:hue/:bri/:sat', async (req, res) => {
   }
 });
 
+router.get('/', async (req, res) => {
+  console.log('Hit!');
+});
+
 module.exports = router;
