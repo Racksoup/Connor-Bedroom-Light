@@ -1,12 +1,14 @@
 const axios = require('axios');
 const PORT = process.env.PORT || 42000;
 
+let g_bri = 120;
+
 const ChangeLightOnTimeOfDay = () => {
   const date = new Date();
   const hour = date.getHours();
   let hue = 10000;
-  let bri = 120;
   let sat = 254;
+  let bri = g_bri;
 
   switch (hour) {
     case 24:

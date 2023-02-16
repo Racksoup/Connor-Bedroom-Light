@@ -29,4 +29,9 @@ router.get('/', async (req, res) => {
   console.log('Hit!');
 });
 
+router.post('/bri/:bri', async (req, res) => {
+  g_bri = parseInt(req.params.bri);
+  console.log('post');
+});
+
 module.exports = router;
