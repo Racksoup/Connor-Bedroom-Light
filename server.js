@@ -21,3 +21,5 @@ process.on('uncaughtException', function (err) {
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 ChangeLightOnTimeOfDay();
+
+// curl http://192.168.2.42:42000/api/connor-bedroom-light
