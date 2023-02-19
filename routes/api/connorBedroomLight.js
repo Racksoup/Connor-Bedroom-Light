@@ -30,8 +30,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/bri', async (req, res) => {
-  g_bri = parseInt(req.params.bri);
-  console.log('post');
+  g_bri = parseInt(req.body.bri);
 });
 
 module.exports = router;
