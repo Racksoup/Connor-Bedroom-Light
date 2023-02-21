@@ -25,7 +25,7 @@ router.put('/light', async (req, res) => {
 });
 
 router.post('/set-state', async (req, res) => {
-  console.log(req.body);
+  // set state values
   if (req.body.bri) {
     bri = req.body.bri;
   }
@@ -35,6 +35,15 @@ router.post('/set-state', async (req, res) => {
   if (req.body.sat) {
     sat = req.body.sat;
   }
+
+  // sends message to route that changes light
+  axios.put(`http://localhost:${PORT}/api/connor-bedroom-light/light/`, {
+    hue,
+    bri,
+    sat,
+    on,
+  });
+
   res.sendStatus(200);
 });
 
