@@ -1,7 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const { ChangeLightOnTimeOfDay } = require('./middleware/ChangeLightOnTimeOfDay');
-const axios = require('axios');
 
 dotenv.config();
 

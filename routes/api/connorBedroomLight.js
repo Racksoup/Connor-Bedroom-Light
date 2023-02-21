@@ -26,10 +26,15 @@ router.put('/light', async (req, res) => {
 
 router.post('/set-state', async (req, res) => {
   console.log(req.body);
-  bri = req.body.bri;
-  hue = req.body.hue;
-  sat = req.body.sat;
-  on = req.body.on;
+  if (req.body.bri) {
+    bri = req.body.bri;
+  }
+  if (req.body.hue) {
+    hue = req.body.hue;
+  }
+  if (req.body.sat) {
+    sat = req.body.sat;
+  }
 });
 
 module.exports = router;
