@@ -25,6 +25,7 @@ router.put('/light', async (req, res) => {
 });
 
 router.post('/set-state', async (req, res) => {
+  console.log('here');
   bri = req.body.bri;
   hue = req.body.hue;
   sat = req.body.sat;
