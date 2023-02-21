@@ -35,6 +35,7 @@ router.post('/set-state', async (req, res) => {
   if (req.body.sat) {
     sat = req.body.sat;
   }
+  res.status(200);
 });
 
 module.exports = router;
