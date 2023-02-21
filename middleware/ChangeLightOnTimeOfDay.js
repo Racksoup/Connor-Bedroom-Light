@@ -78,7 +78,7 @@ const ChangeLightOnTimeOfDay = () => {
   }
 
   // turns light on and off
-  if (bri == 0) {
+  if (bri == 1) {
     on = false;
   } else {
     on = true;
