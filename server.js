@@ -10,7 +10,7 @@ app.use(express.json({ extend: false }));
 
 app.use('/api/connor-bedroom-light', require('./routes/api/connorBedroomLight'));
 
-const PORT = process.env.PORT || 42000;
+const PORT = 42000;
 
 process.on('uncaughtException', function (err) {
   console.error(err);
