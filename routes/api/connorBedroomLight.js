@@ -37,7 +37,7 @@ router.post('/set-state', async (req, res) => {
   }
 
   // turns light on and off
-  if (bri == 1) {
+  if (bri <= 30) {
     on = false;
   } else {
     on = true;
