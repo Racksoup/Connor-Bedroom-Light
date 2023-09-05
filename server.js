@@ -22,3 +22,7 @@ app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 ChangeLightOnTimeOfDay();
 
 // curl http://192.168.2.42:42000/api/connor-bedroom-light
+
+//huebridge 192.168.2.11
+//pi 192.168.2.10
+//comp 192.168.2.15
