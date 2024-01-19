@@ -12,11 +12,6 @@ app.use('/api/connor-bedroom-light', require('./routes/api/connorBedroomLight'))
 
 const PORT = 42000;
 
-process.on('uncaughtException', function (err) {
-  console.error(err);
-  console.log('Node NOT Exiting...');
-});
-
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
 ChangeLightOnTimeOfDay();
