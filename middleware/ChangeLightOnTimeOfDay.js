@@ -1,9 +1,9 @@
 const axios = require("axios");
 const PORT = process.env.PORT || 42000;
 
-let bri = 120;
-let hue = 5461 * 2 - 2000;
-let sat = 60;
+let bri = 90;
+let hue = 5461 * 1 -1000;
+let sat = 70;
 let on = true;
 
 const ChangeLightOnTimeOfDay = async () => {
