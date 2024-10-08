@@ -1,14 +1,19 @@
-const express = require('express');
-const dotenv = require('dotenv');
-const { ChangeLightOnTimeOfDay } = require('./middleware/ChangeLightOnTimeOfDay');
+const express = require("express");
+const dotenv = require("dotenv");
+const {
+  ChangeLightOnTimeOfDay,
+} = require("./middleware/ChangeLightOnTimeOfDay");
 
 dotenv.config();
 
 const app = express();
 
-app.use(express.json({ extend: false }));
+app.use(express.json());
 
-app.use('/api/connor-bedroom-light', require('./routes/api/connorBedroomLight'));
+app.use(
+  "/api/connor-bedroom-light",
+  require("./routes/api/connorBedroomLight")
+);
 
 const PORT = 42000;
 
@@ -21,3 +26,10 @@ ChangeLightOnTimeOfDay();
 //huebridge 192.168.2.11
 //pi 192.168.2.10
 //comp 192.168.2.15
+
+process.on("SIGTERM", () => {
+  console.log("SIGTERM signal received: closing HTTP server");
+  server.close(() => {
+    console.log("HTTP server closed");
+  });
+});
