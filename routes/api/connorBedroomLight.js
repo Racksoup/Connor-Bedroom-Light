@@ -43,8 +43,22 @@ router.put("/light", async (req, res) => {
 });
 
 router.post("/set-state", async (req, res) => {
-  let { bri, hue, sat } = req.body;
-  let on = bri > 30;
+    // set state values
+  if (req.body.bri) {
+    bri = req.body.bri;
+  }
+  if (req.body.hue) {
+    hue = req.body.hue;
+  }
+  if (req.body.sat) {
+    sat = req.body.sat;
+  }
+  // turns light on and off
+  if (bri <= 30) {
+    on = false;
+  } else {
+    on = true;
+  }
 
   try {
     await axiosPutWithRetry(
