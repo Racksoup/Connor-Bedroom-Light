@@ -2,7 +2,7 @@ const axios = require("axios");
 const PORT = process.env.PORT || 42000;
 
 let bri = 90;
-let hue = 5461 * 1 -1000;
+let hue = 4461;
 let sat = 70;
 let on = true;
 
