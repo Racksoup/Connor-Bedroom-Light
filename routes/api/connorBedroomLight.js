@@ -32,7 +32,7 @@ router.put("/light", async (req, res) => {
 
   try {
     await axiosPutWithRetry(
-      `http://${process.env.HUE_BRIDGE_IP}/api/${process.env.HUE_USERNAME}/lights/2/state`,
+      `https://${process.env.HUE_BRIDGE_IP}/api/${process.env.HUE_USERNAME}/lights/2/state`,
       { on, hue, bri, sat }
     );
     res.sendStatus(200);
@@ -62,7 +62,7 @@ router.post("/set-state", async (req, res) => {
 
   try {
     await axiosPutWithRetry(
-      `http://localhost:${PORT}/api/connor-bedroom-light/light/`,
+      `https://localhost:${PORT}/api/connor-bedroom-light/light/`,
       { hue, bri, sat, on }
     );
     res.sendStatus(200);
