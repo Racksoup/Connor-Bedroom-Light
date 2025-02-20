@@ -12,7 +12,7 @@ const ChangeLightOnTimeOfDay = async () => {
 
   try {
     await axios.put(
-      `https://localhost:${PORT}/api/connor-bedroom-light/light/`,
+      `http://localhost:${PORT}/api/connor-bedroom-light/light/`,
       {
         hue,
         bri,
