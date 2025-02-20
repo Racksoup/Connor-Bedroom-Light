@@ -23,9 +23,17 @@ app.use(
   require("./routes/api/connorBedroomLight")
 );
 
-const PORT = 42000;
+// Load SSL certificate
+const sslOptions = {
+  key: fs.readFileSync("server.key"),
+  cert: fs.readFileSync("server.cert"),
+};
 
-app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
+// Start HTTPS server
+const PORT = 42000;
+https.createServer(sslOptions, app).listen(PORT, () => {
+  console.log(`🔐 HTTPS Server started on port ${PORT}`);
+});
 
 ChangeLightOnTimeOfDay();
 
